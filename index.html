@@ -1,0 +1,46 @@
+<html ng-app="myApp">
+	<head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Cesar</title>
+        <link rel="stylesheet" href="css/angular-chart.css">
+        <link rel="stylesheet" href="css/style.css">
+	</head>
+	<body ng-controller="BarCtrl">
+        <div id="main">
+            <!-- Заголовок и описание -->
+    		<h2>Ceasar</h2>
+            <h4>(only the English text)</h4>
+            <p id="legend">In cryptography, a Caesar cipher, also known as Caesar's cipher, the shift cipher, Caesar's code or Caesar shift, is one of the simplest and most widely known encryption techniques. It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet. For example, with a left shift of 3, D would be replaced by A, E would become B, and so on. The method is named after Julius Caesar, who used it in his private correspondence.</p><hr>
+            <div id="content">
+                <!-- Поле для ввода текста -->
+                <div id="content1">
+                    <textarea rows="0" cols="0" name="input" id="input" ng-model="a" 
+                    ng-change="change()"></textarea>
+                </div>
+                <!-- Поле для ввода шага и кнопки -->
+                <div id="content2">
+                    ROT:<input type="number" value="3" name="step" id="step" size="2" min="1" max="25"/><br />
+                    <input type="image" id="button1" src="img/back.png" >
+                    <input type="image" id="button2" src="img/next.png" >
+                </div>
+                <!-- Поле вывода текста -->
+                <div id="content3">
+                    <textarea rows="0" cols="0" name="output" id="output" disabled></textarea>
+                </div>
+            </div>
+            <!-- Диграмма -->
+            <div id="chart">
+                    <canvas width="1200px" height="200px" id="bar" class="chart chart-bar" data="data" labels="labels" 
+                    legend="true" series="series" colors="colors"></canvas>
+            </div>
+        </div>
+
+        <script src="js/lib/jquery.js"></script>
+        <script src="js/lib/angular.js"></script>
+        <script src="js/lib/Chart.js"></script>
+        <script src="js/lib/angular-chart.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/ceasar.js"></script>
+
+	</body>
+</html>
